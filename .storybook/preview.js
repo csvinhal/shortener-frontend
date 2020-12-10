@@ -1,8 +1,4 @@
-import { createGlobalStyle, ThemeProvider } from 'styled-components'
-import { theme } from '../pages/_app'
-import styles from '../styles.css'
-
-const GlobalStyle = createGlobalStyle(styles)
+import ThemeProvider from '../components/ThemeProvider'
 
 export const parameters = {
   actions: { argTypesRegex: '^on[A-Z].*' },
@@ -10,11 +6,8 @@ export const parameters = {
 
 export const decorators = [
   (Story) => (
-    <>
-      <GlobalStyle />
-      <ThemeProvider theme={theme}>
-        <Story />
-      </ThemeProvider>
-    </>
+    <ThemeProvider>
+      <Story />
+    </ThemeProvider>
   ),
 ]

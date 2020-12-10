@@ -1,16 +1,18 @@
 import React, { ReactNode, useMemo } from 'react'
 import styled from 'styled-components'
 
+type ColorsMapping = 'capri' | 'jet' | 'dimgray' | 'white'
+
 interface Props {
   children: ReactNode
   component?: 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'h6' | 'p' | 'span'
   variant?: 'heading' | 'subheading' | 'body' | 'caption'
-  color?: 'capri' | 'jet' | 'dimgray'
+  color?: ColorsMapping
   emphasys?: boolean
 }
 
 interface BaseComponentProps {
-  color: 'capri' | 'jet' | 'dimgray'
+  color: ColorsMapping
   emphasys?: boolean
 }
 
@@ -20,7 +22,6 @@ const BaseComponent = styled('p')<BaseComponentProps>`
   font-weight: ${(props) => (props.emphasys ? 'bold' : 'normal')};
   font-stretch: normal;
   font-style: normal;
-  line-height: 1.2;
 `
 
 interface HeadingProps {
@@ -34,6 +35,8 @@ export const Heading = styled(BaseComponent).attrs<HeadingProps>(
   })
 )<HeadingProps>`
   font-size: 6rem;
+  line-height: 1.167;
+  letter-spacing: -0.01562em;
 `
 
 interface SubHeadingProps {
@@ -45,12 +48,22 @@ export const SubHeading = styled(BaseComponent).attrs<SubHeadingProps>(
     role: 'heading',
     'aria-level': level || 2,
   })
-)<HeadingProps>`
+)<SubHeadingProps>`
   font-size: 3rem;
+  line-height: 1.167;
+  letter-spacing: 0em;
+`
+
+export const Body = styled(BaseComponent)<BaseComponentProps>`
+  font-size: 1rem;
+  line-height: 1.5;
+  letter-spacing: 0.00938em;
 `
 
 export const Caption = styled(BaseComponent)<BaseComponentProps>`
   font-size: 0.75rem;
+  line-height: 1.66;
+  letter-spacing: 0.03333em;
 `
 
 const Typography = ({
@@ -66,6 +79,8 @@ const Typography = ({
         return Heading
       case 'subheading':
         return SubHeading
+      case 'body':
+        return Body
       case 'caption':
         return Caption
       default:
