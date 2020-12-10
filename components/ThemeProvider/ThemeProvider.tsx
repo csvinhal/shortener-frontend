@@ -16,7 +16,6 @@ const GlobalStyle = createGlobalStyle`
   }
 `
 
-// This default export is required in a new `pages/_app.js` file.
 export const theme = {
   colors: {
     capri: '#00baff',
