@@ -1,28 +1,48 @@
+import Image from 'next/image'
 import styled from 'styled-components'
 import Typography from '../components/Typography/Typography'
 
-const Title = styled.h1`
-  font-size: 50px;
-  color: ${({ theme }) => theme.colors.capri};
+const HomeContainer = styled.div`
+  min-height: 100vh;
+  min-width: 100vw;
 `
 
-const SubTitle = styled.h2`
-  font-size: 50px;
-  color: ${({ theme }) => theme.colors.dimgray};
+const BackgroundImage = styled.div`
+  position: fixed;
+  height: 100vh;
+  width: 100vw;
+  overflow: hidden;
+  z-index: -1;
 `
 
-const OtherThing = styled.h2`
-  font-size: 50px;
-  color: ${({ theme }) => theme.colors.jet};
+const InputContainer = styled.div`
+  padding-top: 30%;
+  text-align: center;
 `
 
 export const Home = (): JSX.Element => (
-  <>
-    <Typography>Teste</Typography>
-    <Title>Primário</Title>
-    <SubTitle>Secundária</SubTitle>
-    <OtherThing>Outra coisa</OtherThing>
-  </>
+  <HomeContainer>
+    <BackgroundImage>
+      <Image
+        alt="Mountains"
+        src="/background.jpg"
+        layout="fill"
+        objectFit="cover"
+      />
+    </BackgroundImage>
+
+    <InputContainer>
+      <Typography
+        className="mb-2"
+        component="h1"
+        variant="heading"
+        color="white"
+      >
+        SHORTEN URLS
+      </Typography>
+      <input />
+    </InputContainer>
+  </HomeContainer>
 )
 
 export default Home

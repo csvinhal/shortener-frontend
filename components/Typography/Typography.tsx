@@ -1,11 +1,16 @@
 import React, { ReactNode, useMemo } from 'react'
 import styled from 'styled-components'
 
+type HeadersMapping = 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'h6'
+
+type ComponentMapping = HeadersMapping | 'p' | 'span'
+
 type ColorsMapping = 'capri' | 'jet' | 'dimgray' | 'white'
 
 interface Props {
+  className?: string
   children: ReactNode
-  component?: 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'h6' | 'p' | 'span'
+  component?: ComponentMapping
   variant?: 'heading' | 'subheading' | 'body' | 'caption'
   color?: ColorsMapping
   emphasys?: boolean
@@ -25,31 +30,39 @@ const BaseComponent = styled('p')<BaseComponentProps>`
 `
 
 interface HeadingProps {
+  as: ComponentMapping
   level?: number
 }
 
-export const Heading = styled(BaseComponent).attrs<HeadingProps>(
-  ({ level }) => ({
-    role: 'heading',
-    'aria-level': level || 1,
-  })
-)<HeadingProps>`
-  font-size: 6rem;
+export const Heading = styled(BaseComponent).attrs<HeadingProps>(({ as }) => {
+  if (!['h1', 'h2', 'h3', 'h4', 'h5', 'h6'].includes(as)) {
+    return {
+      role: 'heading',
+      'aria-level': 1,
+    }
+  }
+})<HeadingProps>`
+  font-size: 3.75rem;
   line-height: 1.167;
   letter-spacing: -0.01562em;
 `
 
 interface SubHeadingProps {
+  as: ComponentMapping
   level?: number
 }
 
 export const SubHeading = styled(BaseComponent).attrs<SubHeadingProps>(
-  ({ level }) => ({
-    role: 'heading',
-    'aria-level': level || 2,
-  })
+  ({ as }) => {
+    if (!['h1', 'h2', 'h3', 'h4', 'h5', 'h6'].includes(as)) {
+      return {
+        role: 'heading',
+        'aria-level': 2,
+      }
+    }
+  }
 )<SubHeadingProps>`
-  font-size: 3rem;
+  font-size: 2.125rem;
   line-height: 1.167;
   letter-spacing: 0em;
 `
@@ -67,6 +80,7 @@ export const Caption = styled(BaseComponent)<BaseComponentProps>`
 `
 
 const Typography = ({
+  className,
   children,
   component,
   variant,
@@ -89,7 +103,12 @@ const Typography = ({
   }, [component])
 
   return (
-    <Component as={component} color={color} emphasys={emphasys}>
+    <Component
+      className={className}
+      as={component}
+      color={color}
+      emphasys={emphasys}
+    >
       {children}
     </Component>
   )
