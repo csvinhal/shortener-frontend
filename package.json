@@ -14,7 +14,7 @@
     "test-all": "yarn lint && yarn type-check && yarn test",
     "storybook": "start-storybook -p 6006",
     "build-storybook": "build-storybook",
-    "lint:css":"stylelint './**/*.tsx'"
+    "lint:css": "stylelint './**/*.tsx'"
   },
   "husky": {
     "hooks": {
