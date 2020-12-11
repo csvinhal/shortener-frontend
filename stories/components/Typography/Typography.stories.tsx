@@ -19,7 +19,7 @@ const VariationsTemplate: Story<ComponentProps<typeof Typography>> = () => (
     <Typography component="h1" color="primary" variant="heading" emphasys>
       A
     </Typography>
-    <Typography component="h2" color="darkGray" variant="subheading" emphasys>
+    <Typography component="h2" color="grayDark" variant="subheading" emphasys>
       BEBAS NEUE
     </Typography>
     <Typography color="gray">BOLD</Typography>
