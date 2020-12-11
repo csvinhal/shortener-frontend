@@ -21,7 +21,7 @@ export const Home = (): JSX.Element => (
         className="mb-2"
         component="h1"
         variant="heading"
-        color="darkGray"
+        color="grayDark"
       >
         SHORTEN URLS
       </Typography>
