@@ -1,12 +1,12 @@
 import { ReactNode, useMemo } from 'react'
 import styled from 'styled-components'
-import { Theme } from '../../models/theme'
+import { TTheme } from '../ThemeProvider/constants'
 
 type HeadersMapping = 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'h6'
 
 type ComponentMapping = HeadersMapping | 'p' | 'span'
 
-type ColorsMapping = keyof Theme['colors']
+type ColorsMapping = keyof TTheme['colors']
 
 interface Props {
   className?: string

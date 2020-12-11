@@ -1,11 +1,11 @@
 import { forwardRef, InputHTMLAttributes } from 'react'
 import styled from 'styled-components'
 
-type Props = InputHTMLAttributes<HTMLInputElement> & {
+type InputProps = InputHTMLAttributes<HTMLInputElement> & {
   className?: string
 }
 
-const StyledInput = styled.input.attrs(() => ({}))`
+const StyledInput = styled.input.attrs(() => ({}))<InputProps>`
   height: 2rem;
   width: 100%;
   padding: 3px 16px;
@@ -21,7 +21,7 @@ const StyledInput = styled.input.attrs(() => ({}))`
   }
 `
 
-const Input = forwardRef<HTMLInputElement, Props>(
+const Input = forwardRef<HTMLInputElement, InputProps>(
   ({ className, ...rest }, ref) => (
     <StyledInput className={className} ref={ref} {...rest} />
   )

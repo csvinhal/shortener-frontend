@@ -3,19 +3,23 @@ import {
   createGlobalStyle,
   ThemeProvider as StyledThemeProvider,
 } from 'styled-components'
-import { Theme } from '../../models/theme'
+import { TTheme } from './constants'
 
 const GlobalStyle = createGlobalStyle`
   :root {
-    --theme-silver: 212, 218, 224;
+    --theme-primary-dark: 0, 105, 192;
     --theme-primary: 33, 150, 243;
     --theme-primary-light: 110, 198, 255;
+    --theme-primary-lighter: 227, 242, 253;
     --theme-secundary: 255, 87, 34;
-    --theme-secundaryLight: 255, 138, 80;
+    --theme-secundary-light: 255, 138, 80;
+    --theme-gray-dark: 66, 66, 66;
+    --theme-gray: 112, 112, 112;
+    --theme-gray-light: 207, 207, 207;
+    --theme-gray-lighter: 250, 250, 250;
     --theme-black: 0,0,0;
-    --theme-gray: 158, 158, 158;
-    --theme-dark-gray: 66, 66, 66;
     --theme-white: 255, 255, 255;
+    --theme-silver: 212, 218, 224;
 
     --space-1: 0.5rem;
     --space-2: 1rem;
@@ -78,14 +82,18 @@ const GlobalStyle = createGlobalStyle`
   }
 `
 
-export const theme: Theme = {
+export const theme: TTheme = {
   colors: {
+    primaryDark: 'var(--theme-primary-dark)',
     primary: 'var(--theme-primary)',
     primaryLight: 'var(--theme-primary-light)',
-    silver: 'var(--theme-silver)',
+    primaryLighter: 'var(--theme-primary-lighter)',
+    grayDark: 'var(--theme-gray-dark)',
     gray: 'var(--theme-gray)',
-    darkGray: 'var(--theme-dark-gray)',
+    grayLight: 'var(--theme-gray-light)',
+    grayLighter: 'var(--theme-gray-lighter)',
     white: 'var(--theme-white)',
+    silver: 'var(--theme-silver)',
   },
 }
 
