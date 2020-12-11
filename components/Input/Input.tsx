@@ -11,7 +11,6 @@ const StyledInput = styled.input.attrs(() => ({}))`
   padding: 3px 16px;
   border: 1px solid rgb(${(props) => props.theme.colors.silver});
   border-radius: 30px;
-  -webkit-box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.2);
   box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.2);
   transition: 3ms linear;
   transition-property: border, box-shadow;
