@@ -1,11 +1,12 @@
-import React, { ReactNode, useMemo } from 'react'
+import { ReactNode, useMemo } from 'react'
 import styled from 'styled-components'
+import { Theme } from '../../models/theme'
 
 type HeadersMapping = 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'h6'
 
 type ComponentMapping = HeadersMapping | 'p' | 'span'
 
-type ColorsMapping = 'capri' | 'jet' | 'dimgray' | 'white'
+type ColorsMapping = keyof Theme['colors']
 
 interface Props {
   className?: string
@@ -23,7 +24,7 @@ interface BaseComponentProps {
 
 const BaseComponent = styled('p')<BaseComponentProps>`
   margin: 0;
-  color: ${(props) => props.theme.colors[props.color]};
+  color: rgb(${({ color, theme }) => theme.colors[color]});
   font-weight: ${(props) => (props.emphasys ? 'bold' : 'normal')};
   font-stretch: normal;
   font-style: normal;

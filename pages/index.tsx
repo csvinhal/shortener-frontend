@@ -1,5 +1,5 @@
-import Image from 'next/image'
 import styled from 'styled-components'
+import Input from '../components/Input/Input'
 import Typography from '../components/Typography/Typography'
 
 const HomeContainer = styled.div`
@@ -7,40 +7,25 @@ const HomeContainer = styled.div`
   min-width: 100vw;
 `
 
-const BackgroundImage = styled.div`
-  position: fixed;
-  height: 100vh;
-  width: 100vw;
-  overflow: hidden;
-  z-index: -1;
-`
-
 const InputContainer = styled.div`
-  padding-top: 30%;
+  padding-top: 35vh;
+  margin: auto;
   text-align: center;
+  max-width: 560px;
 `
 
 export const Home = (): JSX.Element => (
   <HomeContainer>
-    <BackgroundImage>
-      <Image
-        alt="Mountains"
-        src="/background.jpg"
-        layout="fill"
-        objectFit="cover"
-      />
-    </BackgroundImage>
-
     <InputContainer>
       <Typography
         className="mb-2"
         component="h1"
         variant="heading"
-        color="white"
+        color="darkGray"
       >
         SHORTEN URLS
       </Typography>
-      <input />
+      <Input />
     </InputContainer>
   </HomeContainer>
 )
