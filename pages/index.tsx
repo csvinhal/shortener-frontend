@@ -1,5 +1,5 @@
 import styled from 'styled-components'
-import Input from '../components/Input/Input'
+import TextField from '../components/TextField/TextField'
 import Typography from '../components/Typography/Typography'
 
 const HomeContainer = styled.div`
@@ -25,7 +25,7 @@ export const Home = (): JSX.Element => (
       >
         SHORTEN URLS
       </Typography>
-      <Input />
+      <TextField />
     </InputContainer>
   </HomeContainer>
 )

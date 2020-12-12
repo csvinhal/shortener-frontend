@@ -56,7 +56,7 @@ const Icon = ({ className, color, icon, type, contrastColor }: IconProps) => {
 }
 
 Icon.defaultProps = {
-  color: 'darkGray',
+  color: 'grayDark',
   contrastColor: 'grayLight',
   type: 'default',
 }
