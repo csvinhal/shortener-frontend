@@ -6,13 +6,13 @@ exports[`it works 1`] = `
   display: -webkit-inline-flex;
   display: -ms-inline-flexbox;
   display: inline-flex;
-  color: rgb(var(--theme-gray-dark));
+  color: rgb(var(--theme-gray));
   border-radius: 50%;
 }
 
 <i
   class="c0"
-  color="grayDark"
+  color="gray"
 >
   <svg
     height="24"

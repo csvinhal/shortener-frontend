@@ -49,7 +49,7 @@ const StyledTextField = styled.input<StylesTextFieldProps>`
     }
     return '1rem'
   }};
-  border: 1px solid rgb(${(props) => props.theme.colors.silver});
+  border: 1px solid rgb(var(${(props) => props.theme.colors.silver}));
   border-radius: 3rem;
   box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.2);
   transition: 3ms linear;
@@ -57,7 +57,7 @@ const StyledTextField = styled.input<StylesTextFieldProps>`
 
   :focus {
     outline: none;
-    border: 1px solid rgb(${({ theme }) => theme.colors.primaryLight});
+    border: 1px solid rgb(var(${({ theme }) => theme.colors.primaryLight}));
   }
 `
 

@@ -87,16 +87,13 @@ const GlobalStyle = createGlobalStyle`
 
 export const theme: TTheme = {
   colors: {
-    primaryDark: 'var(--theme-primary-dark)',
-    primary: 'var(--theme-primary)',
-    primaryLight: 'var(--theme-primary-light)',
-    primaryLighter: 'var(--theme-primary-lighter)',
-    grayDark: 'var(--theme-gray-dark)',
-    gray: 'var(--theme-gray)',
-    grayLight: 'var(--theme-gray-light)',
-    grayLighter: 'var(--theme-gray-lighter)',
-    white: 'var(--theme-white)',
-    silver: 'var(--theme-silver)',
+    primary: '--theme-primary',
+    primaryLight: '--theme-primary-light',
+    gray: '--theme-gray',
+    grayLight: '--theme-gray-light',
+    white: '--theme-white',
+    silver: '--theme-silver',
+    black: '--theme-black',
   },
 }
 

@@ -1,0 +1,39 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`it works 1`] = `
+.c0 {
+  position: relative;
+  width: 100%;
+  cursor: text;
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+}
+
+.c1 {
+  height: 3rem;
+  width: 100%;
+  padding: 1rem;
+  border: 1px solid rgb(var(--theme-silver));
+  border-radius: 3rem;
+  box-shadow: 0px 0px 4px rgba(0,0,0,0.2);
+  -webkit-transition: 3ms linear;
+  transition: 3ms linear;
+  -webkit-transition-property: border,box-shadow;
+  transition-property: border,box-shadow;
+}
+
+.c1:focus {
+  outline: none;
+  border: 1px solid rgb(var(--theme-primary-light));
+}
+
+<div
+  class="c0"
+>
+  <input
+    class="c1"
+  />
+</div>
+`;

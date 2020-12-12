@@ -27,8 +27,7 @@ export const Rounded = TemplateRounded.bind({})
 
 Rounded.args = {
   icon: 'arrowRight',
-  color: 'primaryDark',
-  contrastColor: 'primaryLighter',
+  color: 'primary',
   type: 'rounded',
 }
 
@@ -50,7 +49,7 @@ const TemplateAllIcons: Story<ComponentProps<typeof Icon>> = () => (
       }}
     >
       <Icon icon={'arrowRight'} />
-      <Typography color="grayDark" variant="caption" emphasys>
+      <Typography color="gray" variant="caption" emphasys>
         Icon:{' '}
         <Typography component="span" color="gray" variant="caption">
           arrowRight
@@ -66,7 +65,7 @@ const TemplateAllIcons: Story<ComponentProps<typeof Icon>> = () => (
       }}
     >
       <Icon icon={'link'} />
-      <Typography color="grayDark" variant="caption" emphasys>
+      <Typography color="gray" variant="caption" emphasys>
         Icon:{' '}
         <Typography component="span" color="gray" variant="caption">
           link

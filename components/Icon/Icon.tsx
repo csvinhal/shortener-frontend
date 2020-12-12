@@ -1,34 +1,30 @@
 import { useMemo } from 'react'
 import styled from 'styled-components'
-import { TThemeColors } from '../ThemeProvider/constants'
 import icons from './constants'
 
 interface IconProps {
   className?: string
-  color?: TThemeColors
+  color?: 'primary' | 'gray' | 'white' | 'silver' | 'black'
   icon: keyof typeof icons
   type?: 'default' | 'rounded'
-  contrastColor?: TThemeColors
 }
 
 type StyledIconProps = {
-  color: TThemeColors
-  contrastColor: TThemeColors
+  color: 'primary' | 'gray' | 'white' | 'silver' | 'black'
+  contrastColor: string
 }
 
 const StyledIcon = styled.i<StyledIconProps>`
   display: inline-flex;
-  color: rgb(${({ theme, color }) => theme.colors[color]});
+  color: rgb(var(${({ theme, color }) => theme.colors[color]}));
   border-radius: 50%;
 `
 
 const RoundedIcon = styled(StyledIcon)`
-  background-color: rgb(
-    ${({ theme, contrastColor }) => theme.colors[contrastColor]}
-  );
+  background-color: rgb(var(${({ contrastColor }) => contrastColor}));
 `
 
-const Icon = ({ className, color, icon, type, contrastColor }: IconProps) => {
+const Icon = ({ className, color, icon, type }: IconProps) => {
   const Component = useMemo(() => {
     switch (type) {
       case 'rounded':
@@ -41,7 +37,7 @@ const Icon = ({ className, color, icon, type, contrastColor }: IconProps) => {
     <Component
       className={className}
       color={color}
-      contrastColor={contrastColor}
+      contrastColor={`--theme-${color}-lighter`}
     >
       <svg
         xmlns="http://www.w3.org/2000/svg"
@@ -56,8 +52,7 @@ const Icon = ({ className, color, icon, type, contrastColor }: IconProps) => {
 }
 
 Icon.defaultProps = {
-  color: 'grayDark',
-  contrastColor: 'grayLight',
+  color: 'gray',
   type: 'default',
 }
 

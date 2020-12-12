@@ -24,7 +24,7 @@ interface BaseComponentProps {
 
 const BaseComponent = styled('p')<BaseComponentProps>`
   margin: 0;
-  color: rgb(${({ color, theme }) => theme.colors[color]});
+  color: rgb(var(${({ color, theme }) => theme.colors[color]}));
   font-weight: ${(props) => (props.emphasys ? 'bold' : 'normal')};
   font-stretch: normal;
   font-style: normal;
@@ -118,7 +118,7 @@ const Typography = ({
 Typography.defaultProps = {
   component: 'p',
   variant: 'body',
-  color: 'jet',
+  color: 'black',
   emphasys: false,
 }
 

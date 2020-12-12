@@ -1,4 +1,5 @@
 import styled from 'styled-components'
+import Icon from '../components/Icon/Icon'
 import TextField from '../components/TextField/TextField'
 import Typography from '../components/Typography/Typography'
 
@@ -21,11 +22,14 @@ export const Home = (): JSX.Element => (
         className="mb-2"
         component="h1"
         variant="heading"
-        color="grayDark"
+        color="black"
       >
         SHORTEN URLS
       </Typography>
-      <TextField />
+      <TextField
+        startAdornment={<Icon icon="link" color="primary" />}
+        endAdornment={<Icon type="rounded" icon="arrowRight" color="primary" />}
+      />
     </InputContainer>
   </HomeContainer>
 )

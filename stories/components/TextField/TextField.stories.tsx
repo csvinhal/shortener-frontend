@@ -26,38 +26,24 @@ const TemplateWithIcons: Story<ComponentProps<typeof TextField>> = ({
   <div style={{ maxWidth: '360px' }}>
     <TextField
       className="mb-2"
-      startAdornment={<Icon color="primaryDark" icon="link" />}
+      startAdornment={<Icon color="primary" icon="link" />}
       {...args}
     />
 
     <TextField
       className="mb-2"
-      endAdornment={<Icon color="primaryDark" icon="link" />}
+      endAdornment={<Icon color="primary" icon="link" />}
       {...args}
     />
 
     <TextField
       className="mb-2"
-      startAdornment={
-        <Icon
-          color="primaryDark"
-          contrastColor="primaryLighter"
-          icon="link"
-          type="rounded"
-        />
-      }
+      startAdornment={<Icon color="primary" icon="link" type="rounded" />}
       {...args}
     />
 
     <TextField
-      endAdornment={
-        <Icon
-          color="primaryDark"
-          contrastColor="primaryLighter"
-          icon="arrowRight"
-          type="rounded"
-        />
-      }
+      endAdornment={<Icon color="primary" icon="arrowRight" type="rounded" />}
       {...args}
     />
   </div>
