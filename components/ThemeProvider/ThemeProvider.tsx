@@ -25,6 +25,8 @@ const GlobalStyle = createGlobalStyle`
     --space-2: 1rem;
     --space-3: 1.5rem;
     --space-4: 2rem;  
+
+    --transition: 300ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
   }
 
   * {

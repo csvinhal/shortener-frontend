@@ -16,7 +16,12 @@ type StyledIconProps = {
 
 const StyledIcon = styled.i<StyledIconProps>`
   display: inline-flex;
-  color: rgb(var(${({ theme, color }) => theme.colors[color]}));
+  color: ${({ theme, color }) => {
+    if (color) {
+      return `rgb(var(${theme.colors[color]}))`
+    }
+    return 'inherit'
+  }};
   border-radius: 50%;
 `
 
@@ -52,7 +57,6 @@ const Icon = ({ className, color, icon, type }: IconProps) => {
 }
 
 Icon.defaultProps = {
-  color: 'gray',
   type: 'default',
 }
 

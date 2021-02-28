@@ -1,6 +1,7 @@
 import { Story } from '@storybook/react/types-6-0'
 import { ComponentProps } from 'react'
 import Icon from '../../../components/Icon/Icon'
+import IconButton from '../../../components/IconButton/IconButton'
 import TextField from '../../../components/TextField/TextField'
 
 export default {
@@ -43,7 +44,28 @@ const TemplateWithIcons: Story<ComponentProps<typeof TextField>> = ({
     />
 
     <TextField
+      className="mb-2"
       endAdornment={<Icon color="primary" icon="arrowRight" type="rounded" />}
+      {...args}
+    />
+
+    <TextField
+      className="mb-2"
+      startAdornment={
+        <IconButton color="primary">
+          <Icon icon="link" />
+        </IconButton>
+      }
+      {...args}
+    />
+
+    <TextField
+      className="mb-2"
+      startAdornment={
+        <IconButton color="primary" variant="outlined">
+          <Icon icon="link" />
+        </IconButton>
+      }
       {...args}
     />
   </div>

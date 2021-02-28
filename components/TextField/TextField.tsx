@@ -52,7 +52,7 @@ const StyledTextField = styled.input<StylesTextFieldProps>`
   border: 1px solid rgb(var(${(props) => props.theme.colors.silver}));
   border-radius: 3rem;
   box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.2);
-  transition: 3ms linear;
+  transition: var(--transition);
   transition-property: border, box-shadow;
 
   :focus {
