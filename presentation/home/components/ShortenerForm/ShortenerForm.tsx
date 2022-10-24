@@ -1,4 +1,9 @@
 import { useForm } from 'react-hook-form'
+import Button, {
+  ButtonSizeEnum,
+  ButtonVariantEnum,
+} from '../../../../components/Button/Button'
+import Input, { InputSizeEnum } from '../../../../components/Input/Input'
 import { CreateShortUrl } from '../../../../domain/use-cases/create-short-url'
 import { useCreateShortUrl } from '../../hooks/useCreateShortUrl'
 import styles from './ShortenerForm.module.css'
@@ -26,19 +31,21 @@ const ShortenerForm = ({ createShortUrl }: Props) => {
   return (
     <form className={styles.card} onSubmit={handleSubmit(onSubmit)}>
       <div className={styles.inputGroup}>
-        <input
+        <Input
           placeholder="Past a link to shorten it"
           {...register('url')}
+          inputSize={InputSizeEnum.lg}
           autoComplete="off"
         />
-        <button type="submit">Shorten</button>
+        <Button size={ButtonSizeEnum.lg} type="submit">
+          Shorten
+        </Button>
       </div>
 
-      <button className={styles.moreOptions} type="button">
+      <Button type="button" variant={ButtonVariantEnum.ghost}>
         More Options
-      </button>
-      <input
-        className={styles.customAlias}
+      </Button>
+      <Input
         placeholder="Custom Alias"
         {...register('slug')}
         autoComplete="off"

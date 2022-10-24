@@ -1,0 +1,60 @@
+.button {
+  cursor: pointer;
+  outline: none;
+  text-decoration: none;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  flex-shrink: 0;
+  border-radius: var(--border-radius);
+  color: #ffffff;
+  font-weight: 500;
+  padding: 0 12px;
+  transition-property: border-color, background, color;
+  transition-duration: 0.15s;
+  transition-timing-function: ease;
+}
+
+.buttonSolid {
+  background-color: var(--color-cyan-default);
+  border: 1px solid var(--color-cyan-default);
+}
+
+.buttonSolid:hover {
+  color: var(--color-cyan-default);
+  background-color: var(--color-white);
+  border-color: var(--color-cyan-default);
+}
+
+.buttonSolid:active {
+  background: var(--color-grey-2);
+}
+
+.buttonGhost {
+  background: none;
+  border-color: transparent;
+  color: var(--color-cyan-default);
+}
+
+.buttonGhost:hover {
+  background-color: var(--color-grey-1);
+}
+
+.buttonGhost:active {
+  background-color: var(--color-grey-2);
+}
+
+.sizeSm {
+  font-size: 0.875rem;
+  height: 32px;
+}
+
+.sizeMd {
+  font-size: 0.875rem;
+  height: 40px;
+}
+
+.sizeLg {
+  font-size: 1rem;
+  height: 48px;
+}
